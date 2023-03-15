@@ -7,6 +7,9 @@ class Assignment1_3 {
 	// 피보나치 수열을 계산하는 아래 fib 메소드를 작성하시오.
 	// 이때 동적 프로그래밍 기법을 이용하여 코드를 작성하시오.
 	// 필요하다고 판단되는 필드나 메소드가 있다면 추가하여도 됩니다.
+		
+	static long[] a;
+	
 	public static long fib(int n) {
 
 		if (n == 0)
@@ -14,12 +17,12 @@ class Assignment1_3 {
 		if (n == 1)
 			return 1;
 
-		long[] a = new long[n - 2];
+		a = new long[n - 1];
 
-		return fib(n - 1, a) + fib(n - 2, a);
+		return fib_s(n);
 	}
 
-	public static long fib(int n, long[] a) {
+	public static long fib_s(int n) {
 
 		if (n == 0)
 			return 0;
@@ -29,7 +32,7 @@ class Assignment1_3 {
 		if (a[n - 2] != 0)
 			return a[n - 2];
 
-		return a[n - 2] = fib(n - 1, a) + fib(n - 2, a);
+		return a[n - 2] = fib_s(n - 1) + fib_s(n - 2);
 	}
 
 	// main 메소드는 수정하지 마시오.
@@ -40,3 +43,37 @@ class Assignment1_3 {
 		System.out.println(fib(n));
 	}
 }
+
+
+/*
+ * 
+ * 	
+	static long[] a;
+	
+	public static long fib(int n) {
+
+		if (n == 0)
+			return 0;
+		if (n == 1)
+			return 1;
+
+		a = new long[n - 1];
+
+		return fib_s(n);
+	}
+
+	public static long fib_s(int n) {
+
+		if (n == 0)
+			return 0;
+		if (n == 1)
+			return 1;
+
+		if (a[n - 2] != 0)
+			return a[n - 2];
+
+		return a[n - 2] = fib_s(n - 1) + fib_s(n - 2);
+	}
+
+	
+ */
