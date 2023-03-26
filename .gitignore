@@ -1,0 +1,14 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+강의자료/
+.DS_Store
+주간일지/
+최종보고서/
+.vscode/
