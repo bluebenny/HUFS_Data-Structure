@@ -41,6 +41,8 @@ class Assignment1_3 {
 		int n = scan.nextInt(); // 데이터의 갯수 입력
 
 		System.out.println(fib(n));
+
+		scan.close();
 	}
 }
 
