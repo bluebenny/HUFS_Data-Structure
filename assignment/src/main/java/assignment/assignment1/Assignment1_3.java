@@ -1,4 +1,4 @@
-package assignment;
+package assignment.assignment1;
 
 import java.util.Scanner;
 // import java.io.*;
