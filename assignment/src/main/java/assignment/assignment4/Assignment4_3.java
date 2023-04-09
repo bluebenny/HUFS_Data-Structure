@@ -22,13 +22,26 @@ class GenList implements Cloneable {
 			data = null;
 			link = null;
 		}
-        		// 작성해야 함 (deep copy)
+
+		// 작성해야 함 (deep copy)
 		public Object clone() throws CloneNotSupportedException {
-		
-			return null;
+
+			ListNode n = new ListNode();
+
+			if (this.data instanceof GenList) {
+				n.data = ((GenList) this.data).clone();
+			} else {
+				n.data = this.data;
+			}
+
+			if (this.link != null) {
+				n.link = (ListNode) this.link.clone();
+			}
+
+			return n;
+
 		}
 
-        	
 		// 수정하면 안됨.
 		public boolean equals(Object obj) {
 			if (this == obj) {
@@ -134,6 +147,8 @@ class Assignment4_3 {
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
+
+		// k.print();
 
 		System.out.println(l.equals(k));
 	}

@@ -38,17 +38,16 @@ class DoubleLinkedList {
 			return;
 		}
 
-		// case 1 or case 3
-		// System.out.println("insert: case 1 or case 3 process -- " + str);
-		
-		for (ListNode nodePointer = this.head; nodePointer != null; nodePointer = nodePointer.rlink) { // case 1
-			if (nodePointer.data.compareTo(str) >= 0) { // case 1: 김건우 나현흠 <-- 김도훈 // case 2: 김건우 김도훈 <-- 나현흠 // case 3: 김도훈 나현흠 <-- 김건우
-				if (nodePointer.llink == null) {
+		// case 1(general): 김건우 나현흠 <-- 김도훈 // case 2: 김건우 김도훈 <-- 나현흠 // case 3: 김도훈 나현흠 <-- 김건우
+
+		for (ListNode nodePointer = this.head; nodePointer != null; nodePointer = nodePointer.rlink) {
+			if (nodePointer.data.compareTo(str) >= 0) { 
+				if (nodePointer.llink == null) { // case 3
 					this.head = nodeInserted;
 					nodeInserted.llink = null;
 					nodeInserted.rlink = nodePointer;
 					nodePointer.llink = nodeInserted;
-				} else {
+				} else { // case 1(general)
 					nodeInserted.llink = nodePointer.llink;
 					nodeInserted.rlink = nodePointer;
 					nodePointer.llink.rlink = nodeInserted;
