@@ -113,6 +113,22 @@ class GenList implements Cloneable {
 		list.head = (ListNode) head.clone();
 		return list;
 	}
+
+	// public void specificPrint() {
+	// 	((GenList)((GenList)head.link.data).head.link.data).print();
+	// 	System.out.println();
+	// 	((GenList)((GenList)((GenList)head.link.link.data).head.link.data).head.link.data).print();
+	// 	System.out.println();
+
+	// 	System.out.print("Same object?: ");
+	// 	if (((GenList)((GenList)head.link.data).head.link.data) == ((GenList)((GenList)((GenList)head.link.link.data).head.link.data).head.link.data))
+	// 		System.out.println("true");
+	// 	else
+	// 		System.out.println("false");
+	// 	System.out.println();
+
+	// 	((GenList)((GenList)head.link.data).head.link.data).head.data = "hello";
+	// }
 }
 
 
@@ -149,6 +165,13 @@ class Assignment4_3 {
 		}
 
 		// k.print();
+		// l.specificPrint();
+		// k.specificPrint();
+
+		// l.print();
+		// System.out.println();
+		// k.print();
+		// System.out.println();
 
 		System.out.println(l.equals(k));
 	}
